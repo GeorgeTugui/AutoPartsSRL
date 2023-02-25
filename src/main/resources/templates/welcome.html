@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME</title>
+</head>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html" style="z-index: 3;"></div>
+<body>
+<!--Background-->
+<div>
+    <img th:src="@{images/welcome1.jpg}" alt="welcome" style="background-repeat: no-repeat; background-position: center; background-size: cover; filter: blur(8px);
+  -webkit-filter: blur(8px); width: 100%; height: 100%;">
+</div>
+
+<!-- Content -->
+<div style=" background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.4); color: white; font-weight: bold; border: 3px solid #f1f1f1; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 80%; padding: 20px; text-align: center;   border-radius: 5px;  padding: 10px 20px;
+  text-decoration: none; display: inline-block;">
+    <p class="w3-opacity" style="color: white; font-size: 1.5em; text-shadow: 1px 1px black;top: 50%; left: 50%;">
+        Welcome back to our
+        site! Please feel free to choose from our variety of products</p>
+    <p>
+    <div>
+        <img th:src="@{images/logo1.jpg}" alt="logo1" style="width:15%">
+    </div>
+    <p>     </p>
+    <p>     </p>
+    <p>     </p>
+    <button th:href="@{/login}" class="btn" th:onclick="|window.location.href='/login'|"
+       style="  background-color: #04AA6D; color: white; padding: 16px 20px; border: none; cursor: pointer; width: 100%; opacity: 0.9;">LOG IN</button>
+    </p>
+</div>
+
+<!-- Footer -->
+<div class="w3-container w3-padding-64 w3-opacity w3-dark-grey w3-xlarge" style=" background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.4); color: white; font-weight: bold; border: 3px solid #f1f1f1;
+   top: 20%; left: 50%; transform: translate(-50%, -100%); z-index: 2; width: 80%; text-align: center; position: relative;  border-radius: 5px;  text-decoration: none; display: inline-block;">
+    <a href="#" class="fab fa-facebook" style=" background: #3B5998; color: white;"></a>
+    <a href="#" class="fab fa-twitter" style="  background: #55ACEE;  color: white;"></a>
+    <a href="#" class="fab fa-google" style="  background: #dd4b39;  color: white;"></a>
+    <a href="#" class="fab fa-linkedin" style="  background: #007bb5;  color: white;"></a>
+    <a href="#" class="fab fa-youtube" style="  background: #bb0000;  color: white;"></a>
+    <a href="#" class="fab fa-instagram" style="  background: #125688;  color: white;"></a>
+    <a href="#" class="fab fa-pinterest" style="  background: #cb2027;  color: white;"></a>
+    <a href="#" class="fab fa-snapchat-ghost"
+       style="  background: #fffc00;  color: white;  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></a>
+    <a href="#" class="fab fa-skype" style="  background: #00aff0;  color: white;"></a>
+    <a href="#" class="fab fa-android" style="  background: #a4c639;  color: white;"></a>
+    <a href="#" class="fab fa-dribbble" style="  background: #ea4c89;  color: white;"></a>
+    <a href="#" class="fab fa-vimeo" style="  background: #45bbff;  color: white;"></a>
+    <a href="#" class="fab fa-tumblr" style="  background: #2c4762;  color: white;"></a>
+    <a href="#" class="fab fa-vine" style="  background: #00b489;  color: white;"></a>
+    <a href="#" class="fab fa-foursquare" style="  background: #45bbff;  color: white;"></a>
+    <a href="#" class="fab fa-stumbleupon" style="  background: #eb4924;  color: white;"></a>
+    <a href="#" class="fab fa-flickr" style="  background: #f40083;  color: white;"></a>
+    <a href="#" class="fab fa-yahoo" style="  background: #430297;  color: white;"></a>
+    <a href="#" class="fab fa-soundcloud" style="  background: #ff5500;  color: white;"></a>
+    <a href="#" class="fab fa-reddit" style="  background: #ff5700;  color: white;"></a>
+    <a href="#" class="fa fa-rss" style="  background: #ff6600;  color: white;"></a>
+    <p class="w3-medium">Powered by <a href="https://www.itschool.ro/" target="_blank">iTschool</a></p>
+</div>
+</body>
+</html>

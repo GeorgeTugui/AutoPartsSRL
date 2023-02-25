@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SELECT CATEGORY</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+    </style>
+</head>
+<body>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html"></div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+<!-- The Body -->
+<div class="w3-black" id="tour">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide w3-center">SELECT CATEGORY</h2>
+    <p class="w3-opacity w3-center"><i>Best parts for your car!</i></p><br>
+    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <img th:src="@{images/image6.jpg}" alt="Interior" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Interior</b></p>
+          <p class="w3-opacity">------------------------------</p>
+          <p>A variety of items for your comfort</p>
+          <a href="#" th:href="@{/interior/all}">
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Select</button>
+          </a>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img th:src="@{images/image7.jpg}" alt="Exterior" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Exterior</b></p>
+          <p class="w3-opacity">------------------------------</p>
+          <p>Parts are categorised by id for correct fitment</p>
+          <a href="#" th:href="@{/exterior/all}">
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Select</button>
+          </a>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img th:src="@{images/image8.jpg}" alt="Detailing" style="width:100%; height:50%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Detailing</b></p>
+          <p class="w3-opacity">------------------------------</p>
+          <p>Add a perfume smell to your car and other items</p>
+          <a href="#" th:href="@{detailing/all}">
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</main>
+</html>

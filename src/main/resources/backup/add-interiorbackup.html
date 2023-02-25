@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ADD INTERIOR</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+.container{
+    margin-top:0px;
+}
+.btn:hover{
+    color:white;
+}
+.input-text:focus{
+    box-shadow: 0px 0px 0px;
+    border-color:#343a40!important;
+    outline: 0px;
+}
+.form-control {
+    border: 1px solid #343a40!important;
+}
+    </style>
+</head>
+<body>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html"></div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+  <body>
+  <form action="#" th:action="@{/interior/add-new}" th:object="${interior}" method="post"
+        style="max-width:280px; margin:0 auto"><br>
+
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label"><h2>Name:</h2></label>
+      <div class="col-sm-8">
+        <br>
+        <input type="text" th:field="*{name}" id="name"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label"><h2>Price:</h2></label>
+      <div class="col-sm-8">
+        <br>
+        <input type="text" th:field="*{price}" id="price"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label"><h2>Description:</h2></label>
+      <div class="col-sm-8">
+        <br>
+        <input type="text" th:field="*{interiorpartdescription}" id="interiorpartdescription"/>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-success">Add interior</button>
+    </div>
+  </form>
+  </body>
+</div>
+</body>
+</html>

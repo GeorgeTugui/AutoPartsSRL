@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTER SUCCESS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html" style="z-index: 3;"></div>
+
+<body>
+<!--Background-->
+<div>
+    <img th:src="@{images/register2.jpg}" alt="register2" style="background-repeat: no-repeat; background-position: center; background-size: cover; filter: blur(8px);
+  -webkit-filter: blur(8px); width: 100%; height: 100%;">
+</div>
+
+<!-- Content -->
+<div style=" background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.4); color: white; font-weight: bold; border: 3px solid #f1f1f1; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 80%; padding: 20px; text-align: center;   border-radius: 5px;  padding: 10px 20px;
+  text-decoration: none; display: inline-block;">
+    <div>
+        <p> You have successfully registered! Please check your email address </p>
+        <a><p th:text="${user.email}"></p></a>
+        <p> following the next icon: </p>
+        <div th:if="${#strings.containsIgnoreCase(user.email,'yahoo')}">
+            <a href="https://mail.yahoo.com/" target="_blank">
+                <img border="0" alt="Yahoo"
+                     src="https://icons-for-free.com/iconfiles/png/512/logo+search+engine+website+yahoo+icon-1320168602217718066.png"
+                     width="50" height="50"></a>-->
+        </div>
+        <div th:if="${#strings.containsIgnoreCase(user.email,'gmail')}">
+            <a href="https://mail.google.com/" target="_blank">
+                <img border="0" alt="Gmail"
+                     src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/112013/gmail.png?itok=s1WEASde"
+                     width="50" height="50"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

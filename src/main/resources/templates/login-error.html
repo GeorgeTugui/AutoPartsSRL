@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ERROR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+    </style>
+</head>
+<body>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html"></div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px;text-align:center;color:black;font-weight:bold">
+    <body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}" style="display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:#E8F6E3;font-weight:bold;height:100vh">
+    <h1 th:text="${httpStatus} - ${httpStatus.reasonPhrase}">404 Not Found: The requested resource could not be found on the server.</h1>
+    <p th:text="${errorMessage}">You introduced the wrong credentials. Please try again!</p>
+
+    </body>
+</div>
+</body>
+</html>

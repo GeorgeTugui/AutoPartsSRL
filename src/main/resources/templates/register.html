@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <style>
+  body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("images/register1.jpg");
+
+  /* Control the height of the image */
+  min-height: 930px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+    </style>
+</head>
+<body>
+
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html"></div>
+
+<!-- Page content -->
+<div class="bg-img">
+    <main>
+        <form action="#" th:action="@{/register}" th:object="${user}" method="post"
+              style="  position: absolute;  right: 0;  margin: 20px;  max-width: 500px;  padding: 16px;  background-color: white;">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h2>Name:</h2></label>
+                <div class="col-sm-8">
+                    <br>
+                    <input type="text" th:field="*{fullName}" id="fullName" required minlength="3"
+                           maxlength="15" pattern="[a-zA-Z0-9]+"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h2>Email:</h2></label>
+                <div class="col-sm-8">
+                    <br>
+                    <input type="email" th:field="*{email}" id="email" required minlength="3"
+                           maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h2>Username:</h2></label>
+                <div class="col-sm-8">
+                    <br>
+                    <input type="text" th:field="*{username}" id="username" required minlength="3"
+                           maxlength="20" pattern="[a-zA-Z0-9]+"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h2>Password:</h2></label>
+                <div class="col-sm-8">
+                    <br>
+                    <input type="password" th:field="*{password}" id="password" required minlength="3"
+                           maxlength="20"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><h2>Repeat password:</h2></label>
+                <div class="col-sm-8">
+                    <br>
+                    <input type="password" th:field="*{passwordConfirm}" id="passwordConfirm" required minlength="3"
+                           maxlength="15"/>
+                </div>
+                <br>
+            </div>
+            <div th:if="${user.password != user.passwordConfirm}" class="alert alert-danger" role="alert">
+                <p class="error">Passwords do not match!</p>
+            </div>
+            <div>
+                <input type="hidden" th:field="*{accountNonExpired}"/>
+                <input type="hidden" th:field="*{accountNonLocked}"/>
+                <input type="hidden" th:field="*{credentialsNonExpired}"/>
+                <input type="hidden" th:field="*{enabled}"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success"
+                        style="  background-color: #04AA6D; color: white; padding: 16px 20px; border: none; cursor: pointer; width: 100%; opacity: 0.9;">
+                    Register
+                </button>
+            </div>
+        </form>
+    </main>
+</div>
+<footer>
+    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login" class="fw-bold text-body"><u>Login
+        here</u></a></p>
+</footer>
+</body>
+</html>

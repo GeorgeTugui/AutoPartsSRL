@@ -1,0 +1,92 @@
+<!-- Navbar -->
+<div th:fragment="navbar">
+
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Detailing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/navbar.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <div class="w3-top" style="z-index: 3;">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+               href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="/welcome" class="w3-bar-item w3-button w3-padding-medium">
+                <i class="fas fa-home fa-2x"></i>
+            </a>
+            <a href="/product/all" class="w3-bar-item w3-button w3-padding-large w3-hide-small">All Products</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More">Select products by type <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/detailing/all" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Detailing</a>
+                    <a href="/exterior/all" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Exterior</a>
+                    <a href="/interior/all" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Interior</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More">Account Control<i th:text="${currentFullName}"
+                                                                                          class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/order" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Orders</a>
+                    <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Log Out</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More">More <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 ">
+                    <a href="/about" class="w3-bar-item w3-button">About</a>
+                    <a href="/contact" class="w3-bar-item w3-button">Contact</a>
+                </div>
+            </div>
+            <div sec:authorize="hasRole('ROLE_ADMIN')" class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More">Admin Commands<i th:text="${currentFullName}"
+                                                                                         class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="/product/add-new" class="w3-bar-item w3-button w3-padding-large">Add Product</a>
+                    </div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="/users" class="w3-bar-item w3-button w3-padding-large">All Users</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form th:action="@{/search-results}" th:object="${product}" method="get" class="  w3-padding-medium w3-right">
+                    <div>
+                        <button type="submit"
+                                class="fas fa-search fa-2x w3-button w3-padding-medium"
+                                style="color:white"></button>
+                        <input type="text" class=" w3-hover-red  " id="searchText"
+                               placeholder="Search.." name="searchText" required>
+                    </div>
+                </form>
+                <a href="/shopping-cart" class="w3-bar-item w3-button w3-padding-medium w3-right">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                </a>
+                <a href="/favorites" class="w3-bar-item w3-button w3-padding-medium w3-right">
+                    <i class="fas fa-heart fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+</div>
+

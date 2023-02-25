@@ -1,0 +1,7 @@
+
+Z
+java:S1854$"8Remove this useless assignment to local variable "auth".(¡œõµûÿÿÿÿ8€ƒôÆæ0
+K
+java:S1481$")Remove this unused "auth" local variable.(¡œõµûÿÿÿÿ8„ƒôÆæ0
+t
+java:S6204&"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(Úœôˆüÿÿÿÿ8†ƒôÆæ0

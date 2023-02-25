@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ABOUT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+    </style>
+</head>
+<body>
+<!-- include the navigation bar -->
+<div th:replace="fragments/navbar.html"></div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+        <h2 class="w3-wide">AUTOPARTS SRL</h2>
+        <p class="w3-opacity"><i>We love cars</i></p>
+        <p class="w3-justify">AutoParts is a car parts society that provides a wide range of high-quality automotive
+            parts and accessories. Our mission is to provide customers with the best shopping experience and to meet
+            their needs for car parts and services. With a focus on customer satisfaction and fast delivery, AutoParts
+            has established a reputation for providing top-notch products and exceptional customer service. Whether
+            you're a professional mechanic or just looking for parts for your personal vehicle, AutoParts has what you
+            need to get the job done.</p>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-third">
+                <p>------------------------------</p>
+                <img th:src="@{images/image2.jpg}" class="w3-round w3-margin-bottom" alt="Random Name"
+                     style="width:60%">
+            </div>
+            <div class="w3-third">
+                <p>------------------------------</p>
+                <img th:src="@{images/image4.jpg}" class="w3-round w3-margin-bottom" alt="Random Name"
+                     style="width:60%">
+            </div>
+            <div class="w3-third">
+                <p>------------------------------</p>
+                <img th:src="@{images/image3.jpg}" class="w3-round" alt="Random Name" style="width:60%">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
